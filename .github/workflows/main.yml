@@ -1,4 +1,5 @@
 name: change commit count
+on:
   push:
     branches:
       - 'uat'
