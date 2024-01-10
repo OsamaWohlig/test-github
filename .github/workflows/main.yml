@@ -23,4 +23,7 @@ jobs:
           cd commit-count
           sed -i 's/${{ secrets.COUNT }}/${{ secrets.COUNT }}+50/g' test.txt
           cat test.txt
-          git push
+          git add .
+          git commit --allow-empty -m "update new image"
+          git status
+          git push --set-upstream origin main
