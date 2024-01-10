@@ -1,0 +1,24 @@
+name: change commit count
+  push:
+    branches:
+      - 'uat'
+
+env:
+  GITHUB_TOKEN: ${{ secrets.TOKEN }}
+
+jobs:
+  push_and_deploy:
+    name: change count
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      
+      - name: commit
+        run: |
+          git config --global user.email "osama.patel@wohlig.com"
+          git config --global user.name "OsamaWohlig"
+          git clone https://OsamaWohlig:${{ secrets.TOKEN100 }}@github.com/OsamaWohlig/commit-count.git
+          cd manifest
+          
+          yq e '' -i ./test.txt
