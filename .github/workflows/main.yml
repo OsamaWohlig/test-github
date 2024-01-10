@@ -19,7 +19,7 @@ jobs:
         run: |
           git clone https://OsamaWohlig:${{ secrets.TOKEN }}@github.com/OsamaWohlig/commit-count.git
           cd commit-count
-          new_value=$(( $(cat value.txt) + 50 ))
+          new_value=$(( $(cat test.txt) + 50 ))
           echo $new_value > test.txt
           git config --global user.email "osama.patel@wohlig.com"
           git config --global user.name "OsamaWohlig"
