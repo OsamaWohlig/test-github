@@ -20,4 +20,4 @@ jobs:
           git config --global user.email "osama.patel@wohlig.com"
           git config --global user.name "OsamaWohlig"
           git clone https://OsamaWohlig:${{ secrets.TOKEN100 }}@github.com/OsamaWohlig/commit-count.git
-          cd manifest
+          cd commit-count
