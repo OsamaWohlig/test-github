@@ -17,13 +17,14 @@ jobs:
       
       - name: commit
         run: |
-          git clone https://OsamaWohlig:${{ secrets.TOKEN100 }}@github.com/OsamaWohlig/commit-count.git
+          git clone https://OsamaWohlig:${{ secrets.TOKEN }}@github.com/OsamaWohlig/commit-count.git
           cd commit-count
+          new_value=$(( $(cat value.txt) + 50 ))
+          echo $new_value > value.txt
           git config --global user.email "osama.patel@wohlig.com"
           git config --global user.name "OsamaWohlig"
-          sed -i 's/${{ secrets.COUNT }}/${{ secrets.COUNT }}+50/g' test.txt
           cat test.txt
           git add .
-          git remote set-url origin git@github.com:OsamaWohlig/commit-count.git
+          git remote set-url origin https://OsamaWohlig:${{ secrets.TOKEN }}@github.com/OsamaWohlig/commit-count.git
           git commit -m "test"
           git push --set-upstream origin main
