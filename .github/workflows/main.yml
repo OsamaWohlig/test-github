@@ -23,3 +23,4 @@ jobs:
           cd commit-count
           sed -i 's/${{ secrets.COUNT }}/${{ secrets.COUNT }}+50/g' test.txt
           cat test.txt
+          git push
