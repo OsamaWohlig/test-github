@@ -22,11 +22,9 @@ jobs:
           git config --global user.email "osama.patel@wohlig.com"
           git config --global user.name "OsamaWohlig"
           cd commit-count
-          count = `expr ${{secrets.COUNT}} + 50`
-          echo count
           cat > new-test.txt << EOL
           hello i am devops
-          my commit count is : $count
+          my commit count is : `${{secrets.COUNT}}+50`
           thank you
           EOL 
           sed -i 's/${{ secrets.COUNT }}/${{ secrets.COUNT }}+50/g' test.txt
