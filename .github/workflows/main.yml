@@ -21,9 +21,6 @@ jobs:
           git config --global user.email "osama.patel@wohlig.com"
           git config --global user.name "OsamaWohlig"
           cd commit-count
+          cat test.txt
           sed -i 's/${{ secrets.COUNT }}/${{ secrets.COUNT }}+50/g' test.txt
           cat test.txt
-          git add .
-          git commit --allow-empty -m "update"
-          git status
-          git push
