@@ -22,3 +22,4 @@ jobs:
           git clone https://OsamaWohlig:${{ secrets.TOKEN100 }}@github.com/OsamaWohlig/commit-count.git
           cd commit-count
           sed -i 's/${{ secrets.COUNT }}/50/g' test.txt
+          cat test.txt
