@@ -18,14 +18,10 @@ jobs:
       - name: commit
         run: |
           git clone https://OsamaWohlig:${{ secrets.TOKEN100 }}@github.com/OsamaWohlig/commit-count.git
-          git config --unset-all http.https://github.com/.extraheader
+          cd commit-count
           git config --global user.email "osama.patel@wohlig.com"
           git config --global user.name "OsamaWohlig"
-          cd commit-count
-          cat > new-test.txt << EOL
-          hello i am devops
-          my commit count is : `${{secrets.COUNT}}+50`
-          thank you
-          EOL 
           sed -i 's/${{ secrets.COUNT }}/${{ secrets.COUNT }}+50/g' test.txt
-          cat test.txt
+          git add .
+          git commit -m "test"
+          git push
