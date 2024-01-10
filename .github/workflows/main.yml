@@ -23,7 +23,7 @@ jobs:
           git config --global user.name "OsamaWohlig"
           cat test.txt
           $num1 = ${{ secrets.COUNT }}
-          sum=`expr $num1 + 50`
+          sum=$(($num1 + 50))
           echo sum
           sed -i 's/${{ secrets.COUNT }}/$sum/g' test.txt
           cat test.txt
