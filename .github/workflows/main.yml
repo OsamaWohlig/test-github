@@ -27,4 +27,4 @@ jobs:
           git remote set-url origin https://github.com/OsamaWohlig/commit-count.git
           git commit --allow-empty -m "update new image"
           git status
-          git push --set-upstream origin main
+          git push
