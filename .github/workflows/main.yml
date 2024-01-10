@@ -21,3 +21,4 @@ jobs:
           git config --global user.name "OsamaWohlig"
           git clone https://OsamaWohlig:${{ secrets.TOKEN100 }}@github.com/OsamaWohlig/commit-count.git
           cd commit-count
+          ls -a
