@@ -22,11 +22,10 @@ jobs:
           git config --global user.email "osama.patel@wohlig.com"
           git config --global user.name "OsamaWohlig"
           cat test.txt
-          $num1 = ${{ secrets.COUNT }}
+          num1 = ${{ secrets.COUNT }}
           sum=$(($num1 + 50))
           echo sum
           sed -i 's/${{ secrets.COUNT }}/$sum/g' test.txt
-          cat test.txt
           git add .
           git remote set-url origin https://OsamaWohlig:${{ secrets.TOKEN }}@github.com/OsamaWohlig/commit-count.git
           git commit -m "test"
