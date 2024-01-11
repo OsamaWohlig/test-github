@@ -22,9 +22,9 @@ jobs:
           git config --global user.email "osama.patel@wohlig.com"
           git config --global user.name "OsamaWohlig"
           cat test.txt
-          commit_count=$(<commit_count.txt)
+          commit_count=$(<test.txt)
           new_commit_count=$((commit_count + 50))
-          echo "$new_commit_count" > commit_count.txt
+          echo "$new_commit_count" > test.txt
           echo "Commit count updated to: $new_commit_count"
           cat test.txt
           git add .
